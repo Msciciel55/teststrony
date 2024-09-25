@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Stolarza</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/number-to-words/1.2.4/number-to-words.min.js"></script>
+
+    
+</head>
+<body>
+    <!-- Tło z blurem -->
+    <div class="background"></div>
+
+    <div class="notification">
+        <p>By  zobaczyć  stoły  craftingowe</p>
+        <p>wybierz  kategorie  "warsztaty"!</p>
+    </div>
+
+
+    <div class="logo-container">
+        <img src="assets/logo.webp" alt="logo" class="logo-image">
+        <span class="logo-text">Msciciel</span>
+    </div>
+
+<!-- Rozwijane menu wyboru kategorii -->
+<!-- Wyszukiwarka i menu wyboru kategorii -->
+<div class="header">
+    <button class="build-button" onclick="goToBuildings()">BUDOWLE</button>
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Szukaj...">
+        <button onclick="searchProducts()">Szukaj</button>
+    </div>
+
+    <!-- Rozwijane menu wyboru kategorii -->
+    <div class="dropdown">
+        <button class="dropbtn">Kategorie</button>
+        <div class="dropdown-content">
+            <a href="#" onclick="filterCategory('all')">Wszystkie</a>
+            <a href="#" onclick="filterCategory('beds')">Łóżka</a>
+            <a href="#" onclick="filterCategory('tables')">Stoły</a>
+            <a href="#" onclick="filterCategory('siedziska')">Siedziska</a>
+            <a href="#" onclick="filterCategory('dekoracja')">Dekoracja</a>
+            <a href="#" onclick="filterCategory('skrzynie')">Skrzynie</a>
+            <a href="#" onclick="filterCategory('warsztaty')">Warsztaty</a>
+            <a href="#" onclick="filterCategory('inne')">Inne</a>
+        </div>
+    </div>
+</div>
+
+    <!-- Katalog produktów -->
+    <div id="catalog" class="catalog">
+        <!-- Kafelki będą dynamicznie dodawane tutaj -->
+    </div>
+
+    <!-- Panel boczny -->
+    <div id="sidebar" class="sidebar">
+        <div id="sidebar-content">
+            <!-- Dynamiczna zawartość produktu -->
+        </div>
+        <button class="return-btn" onclick="closeSidebar()">Wyjdź</button>
+        
+        <div id="cart-info">
+            <span id="cart-badge" class="cart-badge" onclick="copyToClipboard()">0</span> <!-- Licznik produktów -->
+            <p id="cart-sum">Suma: <span id="sum-value">0</span> monet</p> <!-- Wyświetlanie sumy -->
+            <i class="fas fa-sync reset-icon" id="reset-counter"></i> <!-- Ikona resetu -->
+        </div>
+    </div>
+
+
+    
+    <script src="script.js"></script>
+    <script src="numberToWords.js"></script>
+    
+</body>
+</html>
+
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Produktów</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Tło z blurem -->
+    <div class="background"></div>
+
+    <div class="logo-container">
+        <img src="assets/logo.webp" alt="logo" class="logo-image">
+        <span class="logo-text">Msciciel</span>
+    </div>
+
+<!-- Rozwijane menu wyboru kategorii -->
+<!-- Wyszukiwarka i menu wyboru kategorii -->
+<div class="header">
+    <button class="build-button" onclick="goTomeble()">MEBLE</button>
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Szukaj...">
+        <button onclick="searchProducts()">Szukaj</button>
+    </div>
+
+    <!-- Rozwijane menu wyboru kategorii -->
+    <div class="dropdown">
+        <button class="dropbtn">Kategorie</button>
+        <div class="dropdown-content">
+            <a href="#" onclick="filterCategory('all')">Wszystkie</a>
+            <a href="#" onclick="filterCategory('uslugi')">Usługi</a>
+            <a href="#" onclick="filterCategory('namioty')">Namioty</a>
+            <a href="#" onclick="filterCategory('stragany')">Stragany</a>
+            <a href="#" onclick="filterCategory('budynki')">Budynki</a>
+            <a href="#" onclick="filterCategory('statki')">Statki</a>
+        </div>
+    </div>
+</div>
+
+    <!-- Katalog produktów -->
+    <div id="catalog" class="catalog">
+        <!-- Kafelki będą dynamicznie dodawane tutaj -->
+    </div>
+
+    <!-- Panel boczny -->
+    <div id="sidebar" class="sidebar">
+        <div id="sidebar-content">
+            <!-- Dynamiczna zawartość produktu -->
+        </div>
+        <button class="return-btn" onclick="closeSidebar()">Wyjdź</button>
+    </div>
+
+
+    
+    <script src="scriptb.js"></script>
+</body>
+</html>

@@ -1,0 +1,454 @@
+/* Resetowanie marginesów i paddingu */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tło z efektem blur */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/tlo.webp') no-repeat center center/cover;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+/* Menu wyboru kategorii */
+.category-menu {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.category-menu button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.category-menu button:hover {
+    background-color: #f1f1f1;
+}
+
+/* Styl wyszukiwarki i menu wyboru kategorii */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Odstęp między wyszukiwarką a menu */
+    margin: 20px 0;
+
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #be9f69;
+    font-family: 'gothicll';
+    border-radius: 5px 0 0 5px;
+    background-color: #000000;
+    color: #fff;
+    border-radius: 0px;
+}
+
+.search-bar button {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #be9f69;
+    border-left: none;
+    background-color: #000000;
+    color: #fff;
+    font-family: 'gothicll';
+    cursor: pointer;
+    border-radius: 0;
+}
+
+.search-bar button:hover {
+    background-color: #252323;
+}
+
+/* Styl rozwijanego menu */
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #eb9f69;
+    font-family: 'gothicll';
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 0px;
+    transition: background-color 0.3s ease;
+    width: 150px; /* Stała szerokość przycisku */
+}
+
+.dropbtn:hover {
+    background-color: #000000;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000000;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: #000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: #fff;
+    text-align: center;
+    font-size: 13px;
+    border: 1px solid #eb9f69;
+
+}
+
+.dropdown-content a:hover {
+    background-color: #141313;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #141313;
+}
+
+.build-button {
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #eb9f69;
+    font-family: 'gothicll';
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 0px;
+    transition: background-color 0.3s ease;
+    width: 150px; /* Stała szerokość przycisku */
+}
+
+.build-button:hover {
+    background-color: #a88f5d; /* Zmiana koloru na hover */
+}
+
+
+.tile {
+    position: relative;
+    background-color: #000000;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid #be9f69;
+    color: #fff;
+}
+
+.tile:hover {
+    transform: scale(1.05);
+}
+
+h2 {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+}
+h3 {
+    font-size: 0em;
+    text-align: center;
+    margin-top: 10px;
+}
+p {
+    font-size: 0.8em;
+    text-align: center;
+    margin-top: auto;
+}
+
+p2 {
+    display: block; /* Ustawia tag jako blokowy, aby tekst mógł być wyśrodkowany */
+    font-size: 1em;
+    text-align: center;
+    margin-top: 10px;
+}
+
+p3 {
+    display: block; /* Ustawia tag jako blokowy, aby tekst mógł być wyśrodkowany */
+    font-size: 1em;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Panel boczny */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background: url('assets/sagan_tlo.jpg') no-repeat center left/cover;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.sidebar-content {
+    padding: 20px;
+    text-align: center; /* Wyśrodkowanie tekstu */
+    position: relative;
+    display: flex; /* Użycie flexboxa */
+    flex-direction: column; /* Układ w kolumnie */
+    align-items: center; /* Wyśrodkowanie w poziomie */
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+.sidebar img {
+    max-width: 90%;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul {
+    margin-top: 2%;
+    list-style-type: none;
+    padding: 0;
+    text-align: center; /* Wyśrodkowanie listy */
+    font-size: 13px;
+}
+
+/* Koło ładowania */
+.loader {
+    border: 8px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 8px solid #3498db;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    position: relative;
+    right: -40px; /* Dostosuj w zależności od potrzeb */
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Przycisk powrotu */
+.return-btn {
+    background: url('assets/sagan_button.jpg') no-repeat center center/cover;
+    color: #ffffff;
+    font-family: 'Gothicll';
+    border: none;
+    padding: 15px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.return-btn:hover {
+    background-color: #f1f1f1;
+}
+
+/* Dostosowanie do mniejszych ekranów */
+@media (max-width: 768px) {
+    .tile {
+        width: 100%;
+    }
+}
+/* Importowanie lokalnych plików fontów */
+@font-face {
+    font-family: 'Gothicll';
+    src: url('fonts/Gothicll.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'storm';
+    src: url('fonts/Storm\ Gust.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Używanie własnego fontu */
+body {
+    font-family: 'Gothicll', sans-serif;
+}
+.logo-container {
+    position: absolute; /* Przyklejony do lewego górnego rogu */
+    top: 10px;
+    left: 10px;
+    width: 130px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8); /* Półprzezroczyste tło */
+    padding: 1px 0px;
+    border-radius: 50px; /* Zaokrąglenie krawędzi */
+    z-index: 1000; /* Umieszcza nad innymi elementami */
+}
+
+.logo-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Tworzy kształt koła */
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 20px;
+    color: #ffffff; /* Kolor tekstu */
+    font-family: 'storm', sans-serif;
+}
+
+/* Ustawienie layoutu kafelek */
+.catalog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 10px;
+    transition: margin-right 0.3s ease, transform 0.3s ease;
+}
+
+
+.tile img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #be9f69;
+    border-radius: 10px;
+}
+
+.tile h2, .tile h3 {
+    margin: 10px 0;
+}
+
+/* Ustawienie opisu na dole kafelki */
+.tile p {
+    position: absolute;
+    bottom: 1px;
+    left: 10px;
+    right: 10px;
+    font-size: 12px;
+}
+
+/* Przesuwanie katalogu kafelek, gdy panel boczny jest otwarty */
+.body-sidebar-open .catalog {
+    margin-right: 400px; /* szerokość panelu bocznego */
+}
+
+.tile[data-category="warsztaty"] {
+    display: none;
+}
+
+.notification {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ffcc00;
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    cursor: pointer;
+}
+.notification:hover {
+    background-color: #ff9900;
+}
+/* Styl przycisku KUP */
+.buy-btn {
+    color: #ffffff;
+    background-color: #000000;
+    font-family: 'Gothicll';
+    border: none;
+    margin-left: 153px;
+    padding: 4px 14.3px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 19px;
+    margin-bottom: auto;
+    border: 2px solid #eb9f69;
+    transition: background-color 0.3s ease;
+}
+
+.buy-btn:hover {
+    background-color: #565453;
+}
+
+/* Styl licznika (czerwony okrąg) */
+.cart-badge {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 14px;
+    display: none; /* Ukryty domyślnie, pojawi się, gdy będą produkty */
+    cursor: pointer;
+}
+
+#cart-info {
+    display: flex; /* Ustawienie flex dla elementów w poziomie */
+    align-items: center; /* Wyśrodkowanie w pionie */
+    margin-bottom: 20px; /* Odstęp poniżej */
+}
+
+#cart-sum {
+    margin: 0 10px; /* Odstęp między licznikiem a sumą */
+}
+
+.reset-icon {
+    cursor: pointer; /* Kursor wskazujący, że ikona jest klikalna */
+    color: #ff0000; /* Kolor ikony resetu */
+    font-size: 24px; /* Rozmiar ikony */
+    margin-left: 10px; /* Odstęp z lewej strony */
+}
+
+.reset-icon:hover {
+    color: #cc0000; /* Zmiana koloru po najechaniu */
+}
